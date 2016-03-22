@@ -23,16 +23,42 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.xwiki.platform</groupId>
-    <artifactId>xwiki-platform-core</artifactId>
-    <version>8.1-SNAPSHOT</version>
+    <groupId>org.xwiki.contrib</groupId>
+    <artifactId>parent-platform</artifactId>
+    <version>7.4</version>
   </parent>
-  <artifactId>xwiki-platform-selenium</artifactId>
-  <name>XWiki Platform - Selenium</name>
+  <artifactId>application-selenium</artifactId>
+  <version>8.1-SNAPSHOT</version>
+  <name>Selenium Application</name>
   <packaging>xar</packaging>
-  <description>Selenium Application</description>
+  <description>Lets you write functional tests directly inside your wiki, using Selenium</description>
   <properties>
     <!-- Don't run CLIRR here since there's no Java code. -->
     <xwiki.clirr.skip>true</xwiki.clirr.skip>
+
+    <!-- Old names of this module used for retro compatibility when resolving dependencies of old extensions -->
+    <xwiki.extension.features>
+      tmassol:selenium-application,
+      org.xwiki.platform:xwiki-platform-selenium
+    </xwiki.extension.features>
+
+    <!-- Extension Manager category -->
+    <xwiki.extension.category>application</xwiki.extension.category>
   </properties>
+  <scm>
+    <connection>scm:git:git://github.com/xwiki-contrib/application-selenium.git</connection>
+    <developerConnection>scm:git:git@github.com:xwiki-contrib/application-selenium.git</developerConnection>
+    <url>https://github.com/xwiki-contrib/application-selenium</url>
+    <tag>HEAD</tag>
+  </scm>
+  <developers>
+    <developer>
+      <id>vmassol</id>
+      <name>Vincent Massol</name>
+    </developer>
+    <developer>
+      <id>xwikidev</id>
+      <name>XWiki Development Team</name>
+    </developer>
+  </developers>
 </project>
